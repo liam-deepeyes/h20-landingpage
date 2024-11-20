@@ -38,10 +38,11 @@ function App() {
       </div>
       <div className='w-screen h-screen bg-transparent flex justify-center items-center'>
         <div className='flex md:flex-row flex-col max-w-5xl'>
-          <div className='md:w-1/2 w-full md:h-full h-1/2'>
+          <div className='md:w-1/2 w-full md:h-full h-1/4 flex justify-center'>
             <motion.img
               src={logo}
               alt='FLX Logo'
+              className='md:w-full w-2/3'
               variants={{
                 hidden: { rotate: 0 },
                 visible: {
@@ -53,7 +54,7 @@ function App() {
               animate='visible'
             />
           </div>
-          <div className='md:w-1/2 w-full md:h-auto h-1/2 flex flex-col gap-2 justify-start md:p-10 px-4 py-10 z-50 text-white items-center text-center'>
+          <div className='md:w-1/2 w-full md:h-auto h-2/2 flex flex-col gap-2 justify-start md:p-10 px-4 md:py-10 z-50 text-white items-center text-center'>
             <h1>
               💦 <span className='text-white text-7xl'>$H2O</span> 💦
             </h1>
