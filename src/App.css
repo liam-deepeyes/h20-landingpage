@@ -1,0 +1,10 @@
+.stroke {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.805);
+  letter-spacing: 2px;
+  text-shadow: rgba(0, 0, 0, 0.57) 0px 15px 30px;
+}
+.flipped-image {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
