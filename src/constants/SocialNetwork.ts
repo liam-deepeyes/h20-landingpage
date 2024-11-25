@@ -6,7 +6,8 @@ export const SOCIAL_NETWORKS = {
   BUY_NOW: '',
   CA: '',
   CONTACT_US: '',
-  MOCONOMICS: ''
+  MOCONOMICS: '',
+  TOTAL_SUPPLY: '6,5B'
 }
 export const SOCIAL_NETWORK_NAME = {
   X: 'X',
