@@ -99,7 +99,7 @@ function App() {
   return (
     <div className='relative w-full h-full'>
       <div className='absolute inset-0 w-full from-blue-200 from-10% via-blue-500 via-70% to-90% bg-gradient-to-b to-blue-700'>
-        <video autoPlay loop muted className='w-full h-full object-cover z-0'>
+        <video autoPlay loop muted className='w-full h-full object-cover z-0 hidden md:block'>
           <source src={backgroundVideo} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
@@ -135,6 +135,7 @@ function App() {
                 whileInView={{ opacity: 1, x: 0 }} // Hiện ảnh ngay khi cuộn đến
                 transition={{ duration: 1 }} // Thời gian animation
                 viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
+                className='text-4xl'
               >
                 💦 <span className='text-white text-6xl'>$H2O</span> 💦
               </motion.h1>
