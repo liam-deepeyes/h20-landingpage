@@ -4,9 +4,10 @@ import { SOCIAL_NETWORKS } from './constants/SocialNetwork'
 import logoCetus from './assets/logo_cetus.png'
 import logoDexScreener from './assets/logo_dex_screener.png'
 import logo from './assets/logo.png'
-import backgroundVideo from './assets/ocean-waves-background.mp4'
+import backgroundVideo from './assets/blue_droplet_background_md.mp4'
 import { useMemo } from 'react'
 import { IMAGES } from './assets/gallery'
+import { CHEMICALS } from './assets/chemical'
 function App() {
   const socialVariants = {
     hidden: { scale: 0, opacity: 0 },
@@ -32,25 +33,33 @@ function App() {
   }
   const gallery = useMemo(() => {
     return (
-      <div className='flex flex-wrap items-center z-20'>
-        {IMAGES.map((i) => (
-          <div className='md:w-1/4 w-1/2 p-2'>
-            <motion.img
-              src={i}
-              className='w-full h-auto border-2 border-white rounded-2xl'
-              whileHover={{ scale: 1.05 }} // Thêm hiệu ứng zoom khi hover
-              initial={{ opacity: 0, y: 20 }} // Bắt đầu với opacity 0 và dịch chuyển xuống
-              whileInView={{ opacity: 1, y: 0 }} // Hiện ảnh khi cuộn đến
-              transition={{ duration: 0.3 }} // Giảm thời gian animation
-              viewport={{ once: false }} // Đảm bảo animation xảy ra mỗi khi ảnh vào view
-            />
-          </div>
-        ))}
+      <div className='flex flex-col z-20'>
+        <h2 className='text-white p-2 rounded-lg border-white border bg-white bg-opacity-30 w-fit'>Book of H20</h2>
+        <div className='flex flex-wrap items-start z-20'>
+          {IMAGES.map((i) => (
+            <div className='md:w-1/3 w-1/2 p-2'>
+              <div className='relative'>
+                <motion.img
+                  src={i}
+                  className='w-full h-auto border-2 border-white rounded-2xl'
+                  whileHover={{ scale: 1.05 }} // Thêm hiệu ứng zoom khi hover
+                  initial={{ opacity: 0, y: 20 }} // Bắt đầu với opacity 0 và dịch chuyển xuống
+                  whileInView={{ opacity: 1, y: 0 }} // Hiện ảnh khi cuộn đến
+                  transition={{ duration: 0.3 }} // Giảm thời gian animation
+                  viewport={{ once: false }} // Đảm bảo animation xảy ra mỗi khi ảnh vào view
+                  onDragStart={(e) => e.preventDefault()} // Ngăn chặn kéo ảnh
+                  style={{ pointerEvents: 'none' }} // Ngăn chặn tương tác với ảnh
+                />
+                <div className='absolute inset-0 bg-black rounded-2xl opacity-0 hover:opacity-50 transition-opacity duration-300' />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     )
   }, [])
   const renderTextDivs = useMemo(() => {
-    return Array.from({ length: 10 }).map((_, index) => {
+    return Array.from({ length: 100 }).map((_, index) => {
       const randomTopPosition = Math.random() * 20 // Tạo vị trí top ngẫu nhiên từ 0 đến 80% (để tránh ra ngoài màn hình)
       const randomFontSize = Math.random() * (8 - 4) + 4 // Tạo kích thước font ngẫu nhiên từ 4rem đến 8rem
       const direction = Math.random() < 0.5 ? '-100vw' : '100vw' // Chọn hướng ngẫu nhiên (trái hoặc phải)
@@ -59,11 +68,13 @@ function App() {
       const fontSize = isMobile ? randomFontSize * 0.5 : randomFontSize // Giảm kích thước font cho mobile
       const randomDurationX = Math.random() * (20 - 10) + 10 // Tạo thời gian ngẫu nhiên từ 10 đến 20 giây
       const randomDurationY = Math.random() * (5 - 2) + 2 // Tạo thời gian ngẫu nhiên cho y từ 2 đến 5 giây
+      // Chọn ngẫu nhiên một hình ảnh từ CHEMICAL
+      const randomImage = CHEMICALS[Math.floor(Math.random() * CHEMICALS.length)]
 
       return (
         <motion.div
           key={index} // Thêm key cho mỗi div
-          className='absolute z-100 text-white'
+          className='absolute z-100'
           style={{ fontSize: `${fontSize}rem`, top: `${randomTopPosition}%` }} // Đặt vị trí top ngẫu nhiên
           initial={{ x: direction, y: 0, opacity: 0 }} // Bắt đầu bên trái
           exit={{ x: '100vw', opacity: 0 }} // Biến mất khi thoát
@@ -77,14 +88,16 @@ function App() {
             y: { duration: randomDurationY, repeat: Infinity, ease: 'easeInOut' }
           }}
         >
-          H2 + O2 = H2O
+          <img src={randomImage} alt='Chemical' className=' max-w-16 z-200 w-auto h-auto' />{' '}
+          {/* Hiển thị hình ảnh ngẫu nhiên */}
         </motion.div>
       )
     })
   }, []) // Chỉ chạy một lần khi component mount
+  //#000a25
   return (
     <div className='relative w-full h-full'>
-      <div className='absolute inset-0 w-full bg-[#000a25]'>
+      <div className='absolute inset-0 w-full from-blue-200 from-10% via-blue-500 via-70% to-90% bg-gradient-to-b to-blue-700'>
         <video autoPlay loop muted className='w-full h-screen object-cover z-0'>
           <source src={backgroundVideo} type='video/mp4' />
           Your browser does not support the video tag.
@@ -143,15 +156,15 @@ function App() {
                 65% of your body is water, so why not bag H2O? 🌊
               </motion.span>
               <motion.div
-                className='flex md:flex-row flex-col w-full justify-between items-center bg-black rounded-lg bg-opacity-30 px-5 py-2'
+                className='flex md:flex-row flex-col w-full justify-between items-center bg-white rounded-lg bg-opacity-75 px-5 py-2'
                 initial={{ opacity: 0, x: -100 }} // Bắt đầu với opacity 0 và dịch chuyển từ trái
                 whileInView={{ opacity: 1, x: 0 }} // Hiện ảnh ngay khi cuộn đến
                 transition={{ duration: 1 }} // Thời gian animation
                 viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
               >
-                <span className='text-sm text-white'>Contract address</span>
+                <span className='text-sm text-blue-500'>Contract address</span>
                 <span
-                  className='text-sm text-white'
+                  className='text-sm text-blue-500'
                   onClick={() => {
                     window.open(SOCIAL_NETWORKS.BUY_NOW, '_blank')
                   }}
@@ -162,21 +175,21 @@ function App() {
                   onClick={() => {
                     navigator.clipboard.writeText(SOCIAL_NETWORKS.CA)
                   }}
-                  className='text-xs bg-blue-400 text-white rounded px-4 py-2'
+                  className='text-xs bg-blue-500 text-white rounded px-4 py-2'
                 >
                   Copy
                 </button>
               </motion.div>
               <motion.div
-                className='flex md:flex-row flex-col w-full justify-evenly items-center bg-slate-100 rounded-lg bg-opacity-50'
+                className='flex md:flex-row flex-col w-full justify-evenly items-center bg-white rounded-lg bg-opacity-75'
                 initial={{ opacity: 0, y: 20 }} // Bắt đầu với opacity 0 và dịch chuyển xuống
                 whileInView={{ opacity: 1, y: 0 }} // Hiện ảnh ngay khi cuộn đến
                 transition={{ duration: 1 }} // Giảm thời gian animation
                 viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
               >
-                <span className='text-lg text-blue-900'>Total Supply</span>
+                <span className='text-lg text-blue-500'>Total Supply</span>
                 <span
-                  className='text-5xl text-blue-900'
+                  className='text-3xl text-blue-500'
                   onClick={() => {
                     window.open(SOCIAL_NETWORKS.BUY_NOW, '_blank')
                   }}
