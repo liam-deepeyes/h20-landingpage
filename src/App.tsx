@@ -34,7 +34,7 @@ function App() {
   const gallery = useMemo(() => {
     return (
       <div className='flex flex-col z-20'>
-        <h2 className='text-white p-2 rounded-lg border-white border bg-white bg-opacity-30 w-fit'>Book of H20</h2>
+        <h2 className='mx-2 text-white p-2 rounded-lg border-white border bg-white bg-opacity-30 w-fit'>Book of H20</h2>
         <div className='flex flex-wrap items-start z-20'>
           {IMAGES.map((i) => (
             <div className='md:w-1/3 w-1/2 p-2'>
@@ -60,11 +60,12 @@ function App() {
   }, [])
   const renderTextDivs = useMemo(() => {
     return Array.from({ length: 100 }).map((_, index) => {
-      const randomTopPosition = Math.random() * 20 // Tạo vị trí top ngẫu nhiên từ 0 đến 80% (để tránh ra ngoài màn hình)
-      const randomFontSize = Math.random() * (8 - 4) + 4 // Tạo kích thước font ngẫu nhiên từ 4rem đến 8rem
-      const direction = Math.random() < 0.5 ? '-100vw' : '100vw' // Chọn hướng ngẫu nhiên (trái hoặc phải)
       // Kiểm tra kích thước màn hình để điều chỉnh kích thước font
       const isMobile = window.innerWidth < 768 // Giả sử kích thước mobile là dưới 768px
+      const randomTopPosition = Math.random() * 100 // Tạo vị trí top ngẫu nhiên từ 0 đến 80% (để tránh ra ngoài màn hình)
+      const randomFontSize = Math.random() * (8 - 4) + 4 // Tạo kích thước font ngẫu nhiên từ 4rem đến 8rem
+      const direction = Math.random() < 0.5 ? '-100vw' : '100vw' // Chọn hướng ngẫu nhiên (trái hoặc phải)
+
       const fontSize = isMobile ? randomFontSize * 0.5 : randomFontSize // Giảm kích thước font cho mobile
       const randomDurationX = Math.random() * (20 - 10) + 10 // Tạo thời gian ngẫu nhiên từ 10 đến 20 giây
       const randomDurationY = Math.random() * (5 - 2) + 2 // Tạo thời gian ngẫu nhiên cho y từ 2 đến 5 giây
@@ -98,7 +99,7 @@ function App() {
   return (
     <div className='relative w-full h-full'>
       <div className='absolute inset-0 w-full from-blue-200 from-10% via-blue-500 via-70% to-90% bg-gradient-to-b to-blue-700'>
-        <video autoPlay loop muted className='w-full h-screen object-cover z-0'>
+        <video autoPlay loop muted className='w-full h-full object-cover z-0'>
           <source src={backgroundVideo} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
