@@ -57,6 +57,9 @@ function App() {
       // Kiểm tra kích thước màn hình để điều chỉnh kích thước font
       const isMobile = window.innerWidth < 768 // Giả sử kích thước mobile là dưới 768px
       const fontSize = isMobile ? randomFontSize * 0.5 : randomFontSize // Giảm kích thước font cho mobile
+      const randomDurationX = Math.random() * (20 - 10) + 10 // Tạo thời gian ngẫu nhiên từ 10 đến 20 giây
+      const randomDurationY = Math.random() * (5 - 2) + 2 // Tạo thời gian ngẫu nhiên cho y từ 2 đến 5 giây
+
       return (
         <motion.div
           key={index} // Thêm key cho mỗi div
@@ -70,8 +73,8 @@ function App() {
             opacity: 0.6
           }}
           transition={{
-            x: { duration: 15, repeat: Infinity, ease: 'linear' },
-            y: { duration: 1, repeat: Infinity, ease: 'easeInOut' }
+            x: { duration: randomDurationX, repeat: Infinity, ease: 'linear' },
+            y: { duration: randomDurationY, repeat: Infinity, ease: 'easeInOut' }
           }}
         >
           H2 + O2 = H2O
