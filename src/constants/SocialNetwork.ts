@@ -1,6 +1,6 @@
 export const SOCIAL_NETWORKS = {
   X: 'https://x.com/h2oxxyz',
-  TELEGRAM: 'https://t.me/h2o_sui',
+  TELEGRAM: 'https://t.me/H2Ozone',
   DEX_SCREENER: '',
   CETUS_FINANCE: '',
   BUY_NOW: '',

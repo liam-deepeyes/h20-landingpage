@@ -204,7 +204,7 @@ function App() {
                   href={SOCIAL_NETWORKS.X}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white bg-black flex items-center justify-center transition-all duration-300 hover:bg-black/80 active:bg-black/60'
+                  className='w-12 h-12 md:w-24 md:h-24 rounded-full border-2 border-white bg-black flex items-center justify-center transition-all duration-300 hover:bg-black/80 active:bg-black/60'
                   variants={socialVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -219,7 +219,7 @@ function App() {
                   href={SOCIAL_NETWORKS.TELEGRAM}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white bg-[#0088cc] flex items-center justify-center transition-all duration-300 hover:bg-[#0088cc]/80 active:bg-[#0088cc]/60'
+                  className='w-12 h-12 md:w-24 md:h-24 rounded-full border-2 border-white bg-[#0088cc] flex items-center justify-center transition-all duration-300 hover:bg-[#0088cc]/80 active:bg-[#0088cc]/60'
                   variants={socialVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -234,7 +234,7 @@ function App() {
                   href={SOCIAL_NETWORKS.CETUS_FINANCE}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
+                  className='w-12 h-12 md:w-24 md:h-24 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
                   variants={socialVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -249,7 +249,7 @@ function App() {
                   href={SOCIAL_NETWORKS.DEX_SCREENER}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
+                  className='w-12 h-12 md:w-24 md:h-24 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
                   variants={socialVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
