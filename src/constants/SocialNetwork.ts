@@ -1,5 +1,5 @@
 export const SOCIAL_NETWORKS = {
-  X: 'https://x.com/h2oxxyz',
+  X: 'https://x.com/H2OSUIxyz',
   TELEGRAM: 'https://t.me/H2Ozone',
   DEX_SCREENER: '',
   CETUS_FINANCE: '',
