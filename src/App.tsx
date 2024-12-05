@@ -37,7 +37,7 @@ function App() {
         <h2 className='mx-2 text-white p-2 rounded-lg border-white border bg-white bg-opacity-30 w-fit'>Book of H20</h2>
         <div className='flex flex-wrap items-start z-20'>
           {IMAGES.map((i) => (
-            <div className='md:w-1/3 w-1/2 p-2'>
+            <div className='md:w-1/4 w-1/2 p-2'>
               <div className='relative'>
                 <motion.img
                   src={i}
