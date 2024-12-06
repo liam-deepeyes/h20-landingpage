@@ -230,7 +230,7 @@ function App() {
                 >
                   <span className='icon-[mdi--telegram] w-8 h-8 md:w-16 md:h-16 text-white'></span>
                 </motion.a>
-                <motion.a
+                {/* <motion.a
                   href={SOCIAL_NETWORKS.CETUS_FINANCE}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -244,7 +244,7 @@ function App() {
                   viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
                 >
                   <img src={logoCetus} alt='FlowX Finance' className='w-full h-full object-cover rounded-full' />
-                </motion.a>
+                </motion.a> */}
                 <motion.a
                   href={SOCIAL_NETWORKS.DEX_SCREENER}
                   target='_blank'
