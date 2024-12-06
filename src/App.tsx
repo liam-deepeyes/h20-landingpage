@@ -1,7 +1,7 @@
 import './App.css'
 import { motion } from 'framer-motion'
 import { SOCIAL_NETWORKS } from './constants/SocialNetwork'
-import logoCetus from './assets/logo_cetus.png'
+//import logoCetus from './assets/logo_cetus.png'
 import logoDexScreener from './assets/logo_dex_screener.png'
 import logo from './assets/logo.png'
 import backgroundVideo from './assets/blue_droplet_background_md.mp4'
