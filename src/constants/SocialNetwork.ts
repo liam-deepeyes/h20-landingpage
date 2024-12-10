@@ -3,6 +3,7 @@ export const SOCIAL_NETWORKS = {
   TELEGRAM: 'https://t.me/H2OSUIxyz',
   DEX_SCREENER: '',
   CETUS_FINANCE: '',
+  RAIDENX: '',
   BUY_NOW: '',
   CA: '',
   CONTACT_US: '',

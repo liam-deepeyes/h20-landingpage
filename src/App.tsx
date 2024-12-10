@@ -1,8 +1,9 @@
 import './App.css'
 import { motion } from 'framer-motion'
 import { SOCIAL_NETWORKS } from './constants/SocialNetwork'
-//import logoCetus from './assets/logo_cetus.png'
+import logoCetus from './assets/logo_cetus.png'
 import logoDexScreener from './assets/logo_dex_screener.png'
+import raidenX from './assets/raindex.png'
 import logo from './assets/logo.png'
 import backgroundVideo from './assets/blue_droplet_background_md.mp4'
 import { useMemo } from 'react'
@@ -36,24 +37,46 @@ function App() {
       <div className='flex flex-col z-20'>
         <h2 className='mx-2 text-white p-2 rounded-lg border-white border bg-white bg-opacity-30 w-fit'>Book of H20</h2>
         <div className='flex flex-wrap items-start z-20'>
-          {IMAGES.map((i) => (
-            <div className='md:w-1/4 w-1/2 p-2'>
-              <div className='relative'>
-                <motion.img
-                  src={i}
-                  className='w-full h-auto border-2 border-white rounded-2xl'
-                  whileHover={{ scale: 1.05 }} // Thêm hiệu ứng zoom khi hover
-                  initial={{ opacity: 0, y: 20 }} // Bắt đầu với opacity 0 và dịch chuyển xuống
-                  whileInView={{ opacity: 1, y: 0 }} // Hiện ảnh khi cuộn đến
-                  transition={{ duration: 0.3 }} // Giảm thời gian animation
-                  viewport={{ once: false }} // Đảm bảo animation xảy ra mỗi khi ảnh vào view
-                  onDragStart={(e) => e.preventDefault()} // Ngăn chặn kéo ảnh
-                  style={{ pointerEvents: 'none' }} // Ngăn chặn tương tác với ảnh
-                />
-                <div className='absolute inset-0 bg-black rounded-2xl opacity-0 hover:opacity-50 transition-opacity duration-300' />
-              </div>
-            </div>
-          ))}
+          {IMAGES.map((i, index) => {
+            if (index === 2) {
+              return (
+                <div className='md:w-1/2 w-full p-2'>
+                  <div className='relative'>
+                    <motion.img
+                      src={i}
+                      className='w-full h-auto border-2 border-white rounded-2xl'
+                      whileHover={{ scale: 1.05 }} // Thêm hiệu ứng zoom khi hover
+                      initial={{ opacity: 0, y: 20 }} // Bắt đầu với opacity 0 và dịch chuyển xuống
+                      whileInView={{ opacity: 1, y: 0 }} // Hiện ảnh khi cuộn đến
+                      transition={{ duration: 0.3 }} // Giảm thời gian animation
+                      viewport={{ once: false }} // Đảm bảo animation xảy ra mỗi khi ảnh vào view
+                      onDragStart={(e) => e.preventDefault()} // Ngăn chặn kéo ảnh
+                      style={{ pointerEvents: 'none' }} // Ngăn chặn tương tác với ảnh
+                    />
+                    <div className='absolute inset-0 bg-black rounded-2xl opacity-0 hover:opacity-50 transition-opacity duration-300' />
+                  </div>
+                </div>
+              )
+            } else
+              return (
+                <div className='md:w-1/4 w-1/2 p-2'>
+                  <div className='relative'>
+                    <motion.img
+                      src={i}
+                      className='w-full h-auto border-2 border-white rounded-2xl'
+                      whileHover={{ scale: 1.05 }} // Thêm hiệu ứng zoom khi hover
+                      initial={{ opacity: 0, y: 20 }} // Bắt đầu với opacity 0 và dịch chuyển xuống
+                      whileInView={{ opacity: 1, y: 0 }} // Hiện ảnh khi cuộn đến
+                      transition={{ duration: 0.3 }} // Giảm thời gian animation
+                      viewport={{ once: false }} // Đảm bảo animation xảy ra mỗi khi ảnh vào view
+                      onDragStart={(e) => e.preventDefault()} // Ngăn chặn kéo ảnh
+                      style={{ pointerEvents: 'none' }} // Ngăn chặn tương tác với ảnh
+                    />
+                    <div className='absolute inset-0 bg-black rounded-2xl opacity-0 hover:opacity-50 transition-opacity duration-300' />
+                  </div>
+                </div>
+              )
+          })}
         </div>
       </div>
     )
@@ -230,7 +253,7 @@ function App() {
                 >
                   <span className='icon-[mdi--telegram] w-8 h-8 md:w-16 md:h-16 text-white'></span>
                 </motion.a>
-                {/* <motion.a
+                <motion.a
                   href={SOCIAL_NETWORKS.CETUS_FINANCE}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -244,12 +267,14 @@ function App() {
                   viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
                 >
                   <img src={logoCetus} alt='FlowX Finance' className='w-full h-full object-cover rounded-full' />
-                </motion.a> */}
+                </motion.a>
+              </motion.div>
+              <motion.div className='flex justify-center my-2 space-x-6' variants={containerVariants}>
                 <motion.a
                   href={SOCIAL_NETWORKS.DEX_SCREENER}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='w-12 h-12 md:w-24 md:h-24 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
+                  className='w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
                   variants={socialVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -259,6 +284,21 @@ function App() {
                   viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
                 >
                   <img src={logoDexScreener} alt='DexScreener' className='w-full h-full object-cover rounded-full' />
+                </motion.a>
+                <motion.a
+                  href={SOCIAL_NETWORKS.RAIDENX}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 hover:opacity-80 active:opacity-60'
+                  variants={socialVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, x: -100 }} // Bắt đầu với opacity 0 và dịch chuyển từ trái
+                  whileInView={{ opacity: 1, x: 0 }} // Hiện ảnh ngay khi cuộn đến
+                  transition={{ duration: 1 }} // Thời gian animation
+                  viewport={{ once: false, amount: 0.1 }} // Hiển thị ngay khi 10% ảnh vào view
+                >
+                  <img src={raidenX} alt='RaidenX' className='w-full h-full object-cover rounded-full' />
                 </motion.a>
               </motion.div>
             </div>
